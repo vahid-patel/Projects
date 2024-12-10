@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Book Finder</h1>
+    </header>
+    <main class="main-container">
+        <section class="search-section">
+            <input type="text" id="searchInput" placeholder="Search by title, author, category, or year">
+            <select id="filterOption">
+                <option value="title">Title</option>
+                <option value="authors">Author</option>
+                <option value="categories">Category</option>
+                <option value="published_year">Year</option>
+            </select>
+            <button id="searchButton">Search</button>
+        </section>
+        <section class="results-section" id="resultsContainer">
+            <!-- Book Cards will appear here -->
+        </section>
+    </main>
+    <footer class="footer">
+        <p>© 2024 Book Finder</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

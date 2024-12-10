@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+}
+
+/* Header */
+.header {
+    background: #4caf50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-bottom: 1em;
+}
+
+/* Search Section */
+.search-section {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-section input,
+.search-section select,
+.search-section button {
+    padding: 0.8em;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-section button {
+    background: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+.search-section button:hover {
+    background: #45a049;
+}
+
+/* Results Section */
+.results-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5em;
+    padding: 1em;
+}
+
+.book-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    text-align: center;
+}
+
+.book-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.book-card h3 {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.book-card button {
+    background: #4caf50;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.book-card button:hover {
+    background: #45a049;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1em 0;
+    background: #f1f1f1;
+    margin-top: 1em;
+}

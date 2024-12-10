@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f3e7e9, #e3eeff);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #bookDetailsContainer {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-50px);
+            animation: slideIn 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        #bookDetailsContainer h1 {
+            color: #333;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        #bookDetailsContainer img {
+            width: 100%;
+            max-width: 200px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        #bookDetailsContainer p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        #bookDetailsContainer strong {
+            color: #222;
+        }
+
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .back-button:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div id="bookDetailsContainer">
+        <h1>Loading...</h1>
+    </div>
+    <script>
+        // Retrieve book data from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookData = JSON.parse(decodeURIComponent(urlParams.get('book')));
+
+        // Display book details
+        const container = document.getElementById("bookDetailsContainer");
+        container.innerHTML = `
+            <h1>${bookData.title}</h1>
+            <img src="${bookData.thumbnail}" alt="${bookData.title}">
+            <p><strong>Author:</strong> ${bookData.authors}</p>
+            <p><strong>Category:</strong> ${bookData.categories}</p>
+            <p><strong>Published Year:</strong> ${bookData.published_year}</p>
+            <p><strong>Description:</strong> ${bookData.description}</p>
+            <p><strong>Pages:</strong> ${bookData.num_pages}</p>
+            <p><strong>Rating:</strong> ${bookData.average_rating} (${bookData.ratings_count} ratings)</p>
+            <a href="index.html" class="back-button">Back to Search</a>
+        `;
+    </script>
+</body>
+</html>
